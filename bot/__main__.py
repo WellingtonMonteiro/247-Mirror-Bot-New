@@ -229,7 +229,7 @@ def main():
     if os.path.isfile(".restartmsg"):
         with open(".restartmsg") as f:
             chat_id, msg_id = map(int, f)
-        bot.edit_message_text("❖ Successfully Restarted./n❖ Join Us @mirror_247_chennel", chat_id, msg_id)
+        bot.edit_message_text("❖ Join Us @mirror_247_chennel", chat_id, msg_id)
         os.remove(".restartmsg")
     elif OWNER_ID:
         try:
