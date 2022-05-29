@@ -34,12 +34,12 @@ def stats(update, context):
     stats = f'<b>❖ Started Since:</b> <code>{currentTime}</code>\n' \
             f'<b>❖ Total Disk Space:</b> <code>{total}</code>\n' \
             f'<b>❖ Used:</b> <code>{used}</code> ' \
-            f'<b>❖ Free:</b> <code>{free}</code>\n\n' \
+            f'<b>| Free:</b> <code>{free}</code>\n\n' \
             f'<b>❖ Upload:</b> <code>{sent}</code>\n' \
             f'<b>❖ Download:</b> <code>{recv}</code>\n\n' \
             f'<b>❖ CPU:</b> <code>{cpuUsage}%</code> ' \
-            f'<b>❖ RAM:</b> <code>{memory}%</code> ' \
-            f'<b>❖ DISK:</b> <code>{disk}%</code>'
+            f'<b>RAM:</b> <code>{memory}%</code> ' \
+            f'<b>DISK:</b> <code>{disk}%</code>'
     sendMessage(stats, context.bot, update)
 
 
@@ -155,8 +155,8 @@ help_string_telegraph = f'''<br>
 '''
 help = Telegraph(access_token=telegraph_token).create_page(
         title='24/7 Mirror Bot Help',
-        author_name='@rk_shaju',
-        author_url='https://t.me/rk_shaju',
+        author_name='24/7 Mirror Help',
+        author_url='https://t.me/mirror_247_chennel',
         html_content=help_string_telegraph,
     )["path"]
 
@@ -233,7 +233,7 @@ def main():
         os.remove(".restartmsg")
     elif OWNER_ID:
         try:
-            text = "<b>❖ Successfully Restarted./n❖ Join Us @mirror_247_chennel</b>"
+            text = "<b>❖ Join Us @mirror_247_chennel</b>"
             bot.sendMessage(chat_id=OWNER_ID, text=text, parse_mode=ParseMode.HTML)
             if AUTHORIZED_CHATS:
                 for i in AUTHORIZED_CHATS:
